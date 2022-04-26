@@ -4,9 +4,8 @@ Bundler.require
 require_relative 'lib/game'
 require_relative 'lib/player'
 
-player1 = Player.new("Iris La Sanguinaire", 10)
-player2 = Player.new("Matthias Le Mercenaire", 10)
-humanplayer1 = HumanPlayer.new("La jolie Mary", 100, 1)
+player1 = Player.new("Iris La Sanguinaire")
+player2 = Player.new("Matthias Le Mercenaire")
 
 puts "*"*100
 puts ""
@@ -40,4 +39,3 @@ puts "*"*100
 puts ""
 puts "Ce fût un combat sans merci, nous remercions #{player1.name} et #{player2.name} pour leur participations, c'était MOR-TEL !"
 
-binding.pry
