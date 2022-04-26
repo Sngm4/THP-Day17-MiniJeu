@@ -4,8 +4,8 @@ Bundler.require
 require_relative 'lib/game'
 require_relative 'lib/player'
 
-player1 = Player.new("Iris", 10)
-player2 = Player.new("Matthias", 10)
+player1 = Player.new("Iris La Sanguinaire", 10)
+player2 = Player.new("Matthias Le Mercenaire", 10)
 puts "*"*100
 puts ""
 puts "\"Bienvenue dans notre nouveau jeu de combat sans merci, veuillez acclamer nos 2 joueurs !\"\n\n"
@@ -21,7 +21,11 @@ puts "Les deux joueurs ont respectivement :\n- #{player1.name} #{player1.life_po
 puts "*"*100
 puts ""
 while player1.life_points > 0 && player2.life_points > 0 do 
-  player2.attack(player1) && player1.attack(player2)
+    player2.attack(player1)
+    player1.attack(player2)
+  if player1.life_points > 0 && player2.life_points > 0
+    puts "Petit recap des points :\n#{player1.name} a #{player1.life_points} point(s)\n#{player2.name} a #{player2.life_points} points."
+  end
 end
 puts "*"*100
 puts ""
